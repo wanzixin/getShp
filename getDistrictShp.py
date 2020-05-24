@@ -7,7 +7,7 @@ import requests
 import json
 import configparser
 import shapefile
-from gcj02togps84 import gcj02towgs84
+from gcj02towgs84 import gcj02towgs84
 
 # 根据高德地图web服务的行政区查询，生成shp文件（含.prj文件），行政区级别：省/直辖市，市，区/县
 class DistrictShp(object):

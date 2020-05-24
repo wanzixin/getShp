@@ -10,7 +10,7 @@ import shapefile
 import webbrowser
 import configparser
 from fake_useragent import UserAgent
-from gcj02togps84 import gcj02towgs84
+from gcj02towgs84 import gcj02towgs84
 
 class POIShp(object):
     def __init__(self,city,poiType,amapWebKey='eb69a25118bfbd1f06c1a9103c24df91'):
