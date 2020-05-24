@@ -38,7 +38,7 @@
 
 3. 利用第三方库pyshp，将返回的坐标串写入对应的shp文件。
 
-<img src=" http://qab3yd0rl.bkt.clouddn.com/China.png" alt="所有省份组成China的行政区划图" style="zoom:100%;" />
+![所有省份组成China的行政区划图](http://qab3yd0rl.bkt.clouddn.com/China.png)
 
 #### 3.2获取aoi的shp文件
 
@@ -52,7 +52,7 @@
 
 3. 若返回的数据包含边界坐标则写入对应shp文件，若返回的数据不包含边界坐标则将其父poi的id和name加入循环列表。
 
-    <img src=" http://qab3yd0rl.bkt.clouddn.com/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6.png" alt="以武汉大学为例" style="zoom:100%;" />
+![以武汉大学为例](http://qab3yd0rl.bkt.clouddn.com/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6.png)
 
 ## 4.第三方依赖
 
@@ -60,7 +60,7 @@
 
 - configparser
 
-- [pyshp]: https://github.com/GeospatialPython/pyshp
+- [pyshp](https://github.com/GeospatialPython/pyshp)
 
   
 
