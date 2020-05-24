@@ -67,7 +67,7 @@
 ## 5.注意事项
 
 - result/district_shp文件夹中，分别包含有中国各省份、湖北各城市、武汉行政区的个人地理数据库。result/aoi_shp文件夹中，分别包含有武汉市高等教育院校、武汉市公园、武汉市景点的个人地理数据库。这些数据是在ArcMap中构建的数据库，一并上传，供需要的读者下载使用。
-- config.ini文件中cookies参数配置，因为cookies中的=和；对ini文件的读取造成了困扰，以后有机会完善。
+- cookies参数，在getPoiShp.py文件中的getRawData函数中指定在headers参数中。config.ini文件中cookies参数配置，因为cookies中的=和；对ini文件的读取造成了困扰，以后有机会完善。
 - 每一个shp文件写入成功后，在控制台会输出提示，注意查看。
 - 若想研究pyshp的用法，推荐查阅pyshp的github页面，其作者的文档很详细。笔者额外加了写入.prj文件的代码。
 
