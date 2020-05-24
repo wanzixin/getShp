@@ -22,11 +22,11 @@
 
 > GCJ-02是由中国国家测绘局（G表示Guojia国家，C表示Cehui测绘，J表示Ju局）制订的地理信息系统的坐标系统。它是一种对经纬度数据的加密算法，即加入随机的偏差。国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。
 
-### 3.程序思路
+## 3.程序思路
 
 在具体操作前，首先需要注册高德地图开发者账号，然后申请Web服务API密钥（Key）。
 
-#### 3.1获取行政区的shp文件
+### 3.1获取行政区的shp文件
 
 1.  构造
 
@@ -38,9 +38,9 @@
 
 3. 利用第三方库pyshp，将返回的坐标串写入对应的shp文件。
 
-<img src=" http://qab3yd0rl.bkt.clouddn.com/China.png" alt="所有省份组成China的行政区划图" style="zoom:50%;" />
+![所有省份组成China的行政区划图](http://qab3yd0rl.bkt.clouddn.com/China.png)
 
-#### 3.2获取aoi的shp文件
+### 3.2获取aoi的shp文件
 
 1. 构造
 
@@ -52,7 +52,7 @@
 
 3. 若返回的数据包含边界坐标则写入对应shp文件，若返回的数据不包含边界坐标则将其父poi的id和name加入循环列表。
 
-    <img src=" http://qab3yd0rl.bkt.clouddn.com/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6.png" alt="以武汉大学为例" style="zoom:50%;" />
+![以武汉大学为例](http://qab3yd0rl.bkt.clouddn.com/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6.png)
 
 ## 4.第三方依赖
 
@@ -60,7 +60,7 @@
 
 - configparser
 
-- [pyshp]: https://github.com/GeospatialPython/pyshp
+- [pyshp](https://github.com/GeospatialPython/pyshp)
 
   
 
@@ -74,15 +74,3 @@
 ## 6.Contact Me
 
  如果有什么建议，欢迎联系我 [zixinwan@foxmail.com](mailto:zixinwan@foxmail.com) 或提issue。欢迎star! 
-
-
-
-
-
-
-
-
-
-
-
-
