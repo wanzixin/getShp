@@ -28,31 +28,19 @@
 
 ### 3.1获取行政区的shp文件
 
-1.  构造
+1.  构造高德Web API的行政区查询请求URL，例如：[http://restapi.amap.com/v3/config/district?key=<用户的key>&keywords=<关键词>&subdistrict=<子级行政区级别(0或1)>&extensions=all](http://restapi.amap.com/v3/config/district?key=<用户的key>&keywords=<关键词>&subdistrict=<子级行政区级别(0或1)>&extensions=all)。须注意的一点是：extensions参数应为all，若为base则只返回基本信息，其中不包含坐标串。
 
-   [行政区查询]: https://lbs.amap.com/api/webservice/guide/api/district
+2.  将获取到的坐标串，从GCJ-02坐标系转换为WGS-84坐标系。
 
-   的请求URL，例如；<u>http://restapi.amap.com/v3/config/district?key=<用户的key>&keywords=<关键词>&subdistrict=<子级行政区级别(0或1)>&extensions=all</u>。须注意的一点是：extensions参数应为all，若为base则只返回基本信息，其中不包含坐标串。
-
-2. 将获取到的坐标串，从GCJ-02坐标系转换为WGS-84坐标系。
-
-3. 利用第三方库pyshp，将返回的坐标串写入对应的shp文件。
-
-![所有省份组成China的行政区划图](http://qab3yd0rl.bkt.clouddn.com/China.png)
+3.  利用第三方库pyshp，将返回的坐标串写入对应的shp文件。
 
 ### 3.2获取aoi的shp文件
 
-1. 构造
+1. 构造高德Web API的POI搜索请求URL，搜索POI有四种方式，分别是：关键词搜索、周边搜索、多边形搜索和ID查询。这里我们使用关键词搜索的方式，指定`city`并设置`citylimit`为`true`，只搜索城市内的数据。例如：[https://restapi.amap.com/v3/place/text?keywords=北京大学&city=beijing&output=xml&offset=20&page=1&key=<用户的key>&extensions=all](https://restapi.amap.com/v3/place/text?keywords=北京大学&city=beijing&output=xml&offset=20&page=1&key=<用户的key>&extensions=all)。
 
-   [搜索POI]: https://lbs.amap.com/api/webservice/guide/api/search
-
-   的请求URL，搜索POI有四种方式，分别是：关键词搜索、周边搜索、多边形搜索和ID查询。这里我们使用关键词搜索的方式，指定city并设置citylimit为true，只搜索城市内的数据。例如：<u>https://restapi.amap.com/v3/place/text?keywords=北京大学&city=beijing&output=xml&offset=20&page=1&key=<用户的key>&extensions=all</u>。
-
-2. 拿到POI的id后，请求 *<u>*https://www.amap.com/detail/get/detail?id=<POI的id>*</u>*。
+2. 拿到POI的id后，请求[https://www.amap.com/detail/get/detail?id=<POI的id>](https://www.amap.com/detail/get/detail?id=<POI的id>)。
 
 3. 若返回的数据包含边界坐标则写入对应shp文件，若返回的数据不包含边界坐标则将其父poi的id和name加入循环列表。
-
-![以武汉大学为例](http://qab3yd0rl.bkt.clouddn.com/%E6%AD%A6%E6%B1%89%E5%A4%A7%E5%AD%A6.png)
 
 ## 4.第三方依赖
 
